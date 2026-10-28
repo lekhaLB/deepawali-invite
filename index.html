@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Deepawali House Party: you are invited</title>
+  <meta name="description" content="You are warmly invited to our Deepawali house party. Diyas, music, mithai and your favourite people. See the details, the dress code and RSVP.">
+  <meta name="theme-color" content="#22050C">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Social preview. After you deploy, change og:image and og:url to the full https:// address (see README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deepawali House Party: you are invited">
+  <meta property="og:description" content="Diyas, music, mithai and your favourite people. Join us for the festival of lights.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.className = 'js';</script>
+  <noscript><style>.rise{opacity:1!important;transform:none!important}.hero__halo,.hero__sky{opacity:1!important}.diya__flame,.diya__glow{opacity:1!important}</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the invitation</a>
+
+  <nav class="dots" aria-label="Sections">
+    <a href="#invitation" class="dots__a" aria-label="Invitation"><span></span></a>
+    <a href="#dress-code" class="dots__a" aria-label="Dress code"><span></span></a>
+    <a href="#rsvp" class="dots__a" aria-label="RSVP"><span></span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================ 1. INVITATION -->
+    <section id="invitation" class="hero" aria-labelledby="title">
+      <div class="hero__sky" aria-hidden="true"></div>
+      <div class="hero__halo" aria-hidden="true">
+        <img class="halo halo--main" src="assets/art/mandala-hero.svg" alt="" width="1200" height="1200">
+        <img class="halo halo--ring" src="assets/art/mandala-ring.svg" alt="" width="1200" height="1200">
+      </div>
+      <canvas id="ambient-canvas" class="hero__canvas" aria-hidden="true"></canvas>
+      <canvas id="fx-canvas" class="hero__canvas" aria-hidden="true"></canvas>
+      <div id="lights-mount" class="hero__lights" aria-hidden="true"></div>
+      <img class="kandil kandil--l" src="assets/art/kandil.svg" alt="" aria-hidden="true" width="260" height="620">
+      <img class="kandil kandil--r" src="assets/art/kandil.svg" alt="" aria-hidden="true" width="260" height="620">
+
+      <button class="sound" id="sound-btn" type="button" aria-pressed="false" aria-label="Fireworks sound">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path class="sound__on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="sound__off" d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+      </button>
+
+      <div class="hero__content" id="hero-content">
+        <p class="hero__guest rise" id="guest-line" hidden style="--t:.15s">Dear <span data-invite="guest"></span>,</p>
+        <h1 class="hero__title" id="title">
+          <span class="hero__word foil" aria-hidden="false">Deepawali</span>
+          <span class="hero__sub rise" style="--t:1.7s">House Party</span>
+        </h1>
+        <img class="hero__divider rise" src="assets/art/divider-lotus.svg" alt="" aria-hidden="true" width="800" height="72" style="--t:1.55s">
+        <p class="hero__marker rise" style="--t:1.8s">You are warmly invited</p>
+        <p class="hero__lead rise" style="--t:1.9s">The diyas are lit, the playlist is loaded, and the mithai won't eat itself. Join us for an evening of lights, laughs and great food with the best people we know. Dress up, show up, and let's light up the night.</p>
+
+        <ul class="details rise" style="--t:2.05s">
+          <li class="details__date"><span data-invite="dateLong">Saturday, November 14</span> <small data-invite="year">2026</small></li>
+          <li class="details__time" data-invite="timeRange">4:30 PM onwards</li>
+          <li class="details__venue"><span data-invite="venueName">Our home</span><span class="details__addr" data-invite="venueAddress" hidden></span></li>
+        </ul>
+
+        <div id="countdown" class="countdown rise" style="--t:2.2s" hidden>
+          <p class="sr-only" id="countdown-sr" aria-live="off"></p>
+          <div class="countdown__grid" aria-hidden="true">
+            <div class="cd"><b data-cd="days">00</b><i>days</i></div>
+            <div class="cd"><b data-cd="hours">00</b><i>hours</i></div>
+            <div class="cd"><b data-cd="minutes">00</b><i>minutes</i></div>
+            <div class="cd"><b data-cd="seconds">00</b><i>seconds</i></div>
+          </div>
+          <p class="countdown__msg" id="countdown-msg" hidden></p>
+        </div>
+
+        <div class="hero__cta rise" style="--t:2.35s">
+          <a class="btn btn--primary" id="btn-rsvp" href="#rsvp"><span class="btn__shape"><span class="btn__label">RSVP</span></span></a>
+          <button class="btn btn--ghost" id="btn-fireworks" type="button"><span class="btn__shape"><span class="btn__label">Set off fireworks</span></span></button>
+        </div>
+        <p class="hero__hint rise" id="hint" style="--t:2.6s">Touch the sky for fireworks. Touch a diya to light or douse it.</p>
+      </div>
+
+      <div class="diya-row" id="diya-row" aria-hidden="true"></div>
+      <div class="hero__edge" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============================================================ 2. DRESS CODE -->
+    <section id="dress-code" class="section dress" aria-labelledby="dress-title">
+      <img class="section__half" src="assets/art/mandala-half.svg" alt="" aria-hidden="true" width="1200" height="600">
+      <div class="section__inner">
+        <header class="section__head">
+          <h2 class="section__title foil" id="dress-title">Dress Code</h2>
+          <img class="section__divider" src="assets/art/divider-paisley.svg" alt="" aria-hidden="true" width="800" height="64">
+          <p class="section__intro">Wear your festive best: traditional Indian attire or a stylish Indo-western look. Jewel tones, silk and zari glow beautifully in lamplight.</p>
+        </header>
+
+        <div class="panels">
+          <article class="panel panel--her" aria-labelledby="her-title">
+            <div class="panel__arch">
+              <img class="panel__figure" src="assets/art/figure-woman.svg" alt="" aria-hidden="true" width="360" height="720" loading="lazy">
+            </div>
+            <div class="panel__body">
+              <h3 class="panel__title foil" id="her-title">For women</h3>
+              <ul class="panel__list">
+                <li>Saree or lehenga</li>
+                <li>Anarkali, sharara or salwar suit</li>
+                <li>Indo-western fusion</li>
+              </ul>
+              <p class="panel__acc">Finish with jhumkas, bangles, a bindi and juttis.</p>
+            </div>
+          </article>
+
+          <article class="panel panel--him" aria-labelledby="him-title">
+            <div class="panel__arch">
+              <img class="panel__figure" src="assets/art/figure-man.svg" alt="" aria-hidden="true" width="360" height="720" loading="lazy">
+            </div>
+            <div class="panel__body">
+              <h3 class="panel__title foil" id="him-title">For men</h3>
+              <ul class="panel__list">
+                <li>Kurta pajama or dhoti kurta</li>
+                <li>Sherwani or bandhgala</li>
+                <li>Nehru jacket over a kurta</li>
+                <li>Indo-western</li>
+              </ul>
+              <p class="panel__acc">Add a stole, a pocket square or a safa, and mojaris or juttis.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ 3. RSVP -->
+    <section id="rsvp" class="section rsvp" aria-labelledby="rsvp-title">
+      <canvas id="petals-canvas" class="rsvp__petals" aria-hidden="true"></canvas>
+      <img class="section__half" src="assets/art/mandala-half.svg" alt="" aria-hidden="true" width="1200" height="600">
+      <div class="section__inner">
+        <header class="section__head">
+          <h2 class="section__title foil" id="rsvp-title">Will you join us?</h2>
+          <img class="section__divider" src="assets/art/divider-lotus.svg" alt="" aria-hidden="true" width="800" height="72">
+          <p class="section__intro" id="rsvp-intro">Kindly reply by <span data-invite="rsvpBy">Wednesday, November 11</span> so we can set the table for everyone.</p>
+        </header>
+
+        <!-- ============================================================
+             RSVP LINK: the form URL is set in js/config.js (rsvpUrl).
+             Until it is filled in, this seal shows "coming soon".
+             ============================================================ -->
+        <a class="seal" id="rsvp-link" href="#rsvp" data-state="pending" aria-describedby="rsvp-status">
+          <img class="seal__art" src="assets/art/mandala-medallion.svg" alt="" aria-hidden="true" width="600" height="600">
+          <svg class="seal__ring" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+            <defs><path id="seal-circle" d="M300,300 m-222,0 a222,222 0 1,1 444,0 a222,222 0 1,1 -444,0"/></defs>
+            <text class="seal__ring-text" font-size="27"><textPath href="#seal-circle" startOffset="0" textLength="1385" lengthAdjust="spacing">Let us know you are coming ✦ Let us know you are coming ✦ Let us know you are coming ✦</textPath></text>
+          </svg>
+          <span class="seal__word">RSVP</span>
+          <span class="sr-only" id="rsvp-sr">Open the RSVP form</span>
+        </a>
+        <p class="rsvp__status" id="rsvp-status" role="status" aria-live="polite">The RSVP form will be live soon. Please check back.</p>
+
+        <div class="actions">
+          <div class="actions__cal">
+            <button class="link" id="cal-btn" type="button" aria-expanded="false" aria-controls="cal-menu">Add to calendar</button>
+            <ul class="menu" id="cal-menu" hidden>
+              <li><a id="cal-google" href="#" target="_blank" rel="noopener noreferrer">Google Calendar</a></li>
+              <li><a id="cal-ics" href="#" download="deepawali-house-party.ics">Apple or Outlook (.ics)</a></li>
+            </ul>
+          </div>
+          <a class="link" id="directions-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Get directions</a>
+          <button class="link" id="share-btn" type="button">Share this invitation</button>
+        </div>
+
+        <footer class="foot">
+          <img class="foot__mandala" src="assets/art/mandala-small.svg" alt="" aria-hidden="true" width="320" height="320">
+          <p class="foot__hi foil">Happy Deepawali</p>
+          <p class="foot__blessing">May your home be full of light, laughter and sweets.</p>
+          <p class="foot__sign">With love,<br><span data-invite="hosts"></span></p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript><p class="noscript">This invitation has a few animated touches that need JavaScript, but all the details are on the page.</p></noscript>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/fireworks.js" defer></script>
+  <script src="js/lights.js" defer></script>
+  <script src="js/ambient.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

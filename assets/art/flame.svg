@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="140" viewBox="0 0 80 140">
+<defs>
+<linearGradient id="flame-outer" gradientUnits="userSpaceOnUse" x1="0" y1="4" x2="0" y2="140"><stop offset="0%" stop-color="#E8590C"/><stop offset="24%" stop-color="#F2700F"/><stop offset="58%" stop-color="#FF9F1C"/><stop offset="100%" stop-color="#FFB52E"/></linearGradient>
+<linearGradient id="flame-mid" gradientUnits="userSpaceOnUse" x1="0" y1="34" x2="0" y2="140"><stop offset="0%" stop-color="#FFB347"/><stop offset="36%" stop-color="#FFD36B"/><stop offset="100%" stop-color="#FFE08A"/></linearGradient>
+<linearGradient id="flame-core" gradientUnits="userSpaceOnUse" x1="0" y1="70" x2="0" y2="140"><stop offset="0%" stop-color="#FFEFB5"/><stop offset="46%" stop-color="#FFF6D6"/><stop offset="100%" stop-color="#FFF1C0"/></linearGradient>
+<radialGradient id="flame-base-heat" gradientUnits="userSpaceOnUse" cx="40" cy="128" r="22"><stop offset="0%" stop-color="#FFF6D6" stop-opacity="0.7"/><stop offset="50%" stop-color="#FFE08A" stop-opacity="0.26"/><stop offset="100%" stop-color="#FFD36B" stop-opacity="0"/></radialGradient>
+<clipPath id="flame-clip"><path d="M40 140C25.75 140 11.5 123.92 11.5 98.46C11.5 62.28 33.27 46.2 41.29 24.76C43.9 15.38 44.6 12.03 45 6C46 16.72 51.64 40.84 59.82 64.96C66.78 85.46 66.79 99.8 66.79 107.84C66.79 127.94 53.4 140 40 140Z"/></clipPath>
+<radialGradient id="flame-base-dim" gradientUnits="userSpaceOnUse" cx="40" cy="143" r="22"><stop offset="0%" stop-color="#B23C0A" stop-opacity="0.78"/><stop offset="35%" stop-color="#C2470B" stop-opacity="0.5"/><stop offset="70%" stop-color="#C8500C" stop-opacity="0.16"/><stop offset="100%" stop-color="#C8500C" stop-opacity="0"/></radialGradient>
+</defs>
+<path d="M40 140C25.75 140 11.5 123.92 11.5 98.46C11.5 62.28 33.27 46.2 41.29 24.76C43.9 15.38 44.6 12.03 45 6C46 16.72 51.64 40.84 59.82 64.96C66.78 85.46 66.79 99.8 66.79 107.84C66.79 127.94 53.4 140 40 140Z" fill="url(#flame-outer)"/>
+<path d="M40.2 139.4C28.5 139.4 16.8 126.68 16.8 106.54C16.8 77.92 35.2 65.2 42.52 48.24C45.04 40.82 46 38.17 46.4 33.4C47.9 41.88 54.68 60.96 56.65 80.04C58.32 96.26 62.43 107.6 62.43 113.96C62.43 129.86 51.32 139.4 40.2 139.4Z" fill="url(#flame-mid)" opacity="0.38"/>
+<path d="M40.4 139.2C30.6 139.2 20.8 127.44 20.8 108.82C20.8 82.36 36.56 70.6 43.18 54.92C45.55 48.06 46.6 45.61 47 41.2C48.6 49.04 53.77 66.68 54.18 84.32C54.53 99.31 59.02 109.8 59.02 115.68C59.02 130.38 49.71 139.2 40.4 139.2Z" fill="url(#flame-mid)"/>
+<path d="M40.6 138.6C33.2 138.6 25.8 130.2 25.8 116.9C25.8 98 37.56 89.6 42.35 78.4C44.03 73.5 44.6 71.75 45 68.6C46.3 74.2 49.01 86.8 51.11 99.4C52.9 110.11 54.81 117.6 54.81 121.8C54.81 132.3 47.7 138.6 40.6 138.6Z" fill="url(#flame-core)" opacity="0.4"/>
+<path d="M40.8 138.4C34.8 138.4 28.8 131.2 28.8 119.8C28.8 103.6 38.64 96.4 42.96 86.8C44.54 82.6 45.2 81.1 45.6 78.4C46.9 83.2 48.06 94 49.24 104.8C50.24 113.98 52.2 120.4 52.2 124C52.2 133 46.5 138.4 40.8 138.4Z" fill="url(#flame-core)"/>
+<circle cx="40" cy="128" r="22" fill="url(#flame-base-heat)" clip-path="url(#flame-clip)"/>
+<circle cx="40" cy="143" r="22" fill="url(#flame-base-dim)" clip-path="url(#flame-clip)"/>
+</svg>
